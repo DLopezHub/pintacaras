@@ -44,7 +44,7 @@ const designConfigs = [
     url:      'https://raw.githubusercontent.com/DLopezHub/pintacaras/65f91cae569ee473802c72a78ff7dcf2e298f9a6/00_v1.png',
     scale:    8.0,
     offsetX: -25,
-    offsetY: -35,
+    offsetY: -40,
     start:    263,
     end:      362,
     anchor:   386,
