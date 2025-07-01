@@ -1,9 +1,9 @@
 // === Configuración de cada diseño ===
 const designConfigs = [
   {
-    url:      'https://raw.githubusercontent.com/DLopezHub/pintacaras/65f91cae569ee473802c72a78ff7dcf2e298f9a6/00_v1.png',
-    scale:    8.0,
-    offsetX: -25,
+    url:      'https://raw.githubusercontent.com/DLopezHub/pintacaras/5b7c033b743f61d8248459bc6b869a8b53730612/05.png',
+    scale:    5.0,
+    offsetX: 0,
     offsetY: -35,
     start:    263,
     end:      362,
@@ -41,9 +41,9 @@ const designConfigs = [
     rotationOffset: 0
   },
   {
-    url:      'https://raw.githubusercontent.com/DLopezHub/pintacaras/5b7c033b743f61d8248459bc6b869a8b53730612/05.png',
-    scale:    5.0,
-    offsetX: 0,
+    url:      'https://raw.githubusercontent.com/DLopezHub/pintacaras/65f91cae569ee473802c72a78ff7dcf2e298f9a6/00_v1.png',
+    scale:    8.0,
+    offsetX: -25,
     offsetY: -35,
     start:    263,
     end:      362,
