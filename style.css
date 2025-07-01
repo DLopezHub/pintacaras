@@ -1,0 +1,54 @@
+/* Reseteo y fondo */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: black;
+  height: 100vh;
+  user-select: none;
+}
+
+/* Contenedor de botones */
+#buttons {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: 8px;
+}
+
+/* Estilo de los botones */
+#buttons button {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+/* Overlay inicial */
+#overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 1.5rem;
+  z-index: 10;
+  touch-action: manipulation;
+}
+
+/* Vídeo y canvas ocupan toda la pantalla */
+video, canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
