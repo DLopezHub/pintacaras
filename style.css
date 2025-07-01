@@ -1,39 +1,48 @@
-/* Reset y fondo */
+/* Reset global y fondo negro */
 html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
   background: #000;
   height: 100vh;
+  position: relative;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   color: #fff;
 }
 
-/* Vídeo y canvas ocupan toda la pantalla */
+/* Vídeo y canvas al fondo */
 video, canvas {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   object-fit: cover;
+  z-index: 0;    /* detrás de todo */
 }
 
-/* Overlay semitransparente */
+/* Imagen de fondo “Te da aaalas” al 50% de ancho, centrada en la parte inferior */
+/* ahora sobre el vídeo para que siempre se vea */
+#bg-img {
+  position: absolute;
+  bottom: 0; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  max-width: 600px;
+  pointer-events: none;
+  z-index: 1;    /* sobre el vídeo/canvas */
+}
+
+/* Overlay semitransparente para iniciar la cámara */
 #overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  display: flex; align-items: center; justify-content: center;
   background: rgba(0, 0, 0, 0.75);
-  z-index: 10;
+  z-index: 2;
 }
 
-/* Botón “Iniciar cámara” moderno con identidad Red Bull */
+/* Botón “Iniciar cámara” estilo Red Bull */
 #start-btn {
   background: linear-gradient(135deg, #002D72 0%, #E21C24 100%);
   border: none;
@@ -46,19 +55,17 @@ video, canvas {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   animation: pulse 2.5s infinite;
+  z-index: 3;
 }
 
-/* Animación de pulso */
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50%      { transform: scale(1.05); }
 }
-
 #start-btn:hover {
   transform: scale(1.08);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
 }
-
 #start-btn:active {
   transform: scale(0.95);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
@@ -70,15 +77,13 @@ video, canvas {
   top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 20;
+  z-index: 3;
   display: flex;
   gap: 12px;
   overflow-x: auto;
   padding: 0 8px;
   box-sizing: border-box;
 }
-
-/* Ocultar scrollbar en Webkit */
 #buttons::-webkit-scrollbar {
   display: none;
 }
@@ -94,19 +99,17 @@ video, canvas {
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap;
   transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  white-space: nowrap;
+  z-index: 3;
 }
 
-/* Hover en botones de diseño */
 #buttons button:hover {
   background: #002D72;
   color: #FFF;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
-
-/* Botón de diseño activo */
 #buttons button.active {
   background: #E21C24;
   border-color: #E21C24;
@@ -114,7 +117,7 @@ video, canvas {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* Responsive: ajustar tamaño en pantallas pequeñas */
+/* Ajustes responsive para móvil */
 @media (max-width: 480px) {
   #start-btn {
     font-size: 1rem;
