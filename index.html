@@ -2,29 +2,31 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Pintacaras – Selector de Diseño</title>
+  <title>Pintacaras – Selector de Diseños</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Botones para elegir diseño -->
   <div id="buttons">
-    <button id="btn1">Diseño 1</button>
+    <button id="btn1" class="active">Diseño 1</button>
     <button id="btn2">Diseño 2</button>
+    <button id="btn3">Diseño 3</button>
+    <button id="btn4">Diseño 4</button>
+    <button id="btn5">Diseño 5</button>
   </div>
 
-  <!-- Overlay inicial -->
-  <div id="overlay">🔴 Toca para activar cámara</div>
+  <!-- Overlay inicial que inicia la cámara al tocar -->
+  <div id="overlay">Toca para activar cámara</div>
 
-  <!-- Vídeo y canvas para AR -->
+  <!-- Vídeo y canvas para renderizar AR -->
   <video id="video" playsinline muted></video>
   <canvas id="canvas"></canvas>
 
   <!-- MediaPipe FaceMesh y CameraUtils -->
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
-
-  <!-- Tu script JS -->
+  <!-- Lógica JS -->
   <script src="script.js"></script>
 </body>
 </html>
